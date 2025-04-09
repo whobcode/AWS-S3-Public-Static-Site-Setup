@@ -1,0 +1,158 @@
+:root {
+  --primary-blue: #1e3a8a;
+  --accent-blue: #e0ecff;
+  --warm-beige: #f3ede1;
+  --text-color: #f8f9fa;
+  --button-hover: #2563eb;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-blur: blur(10px);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Blurred hero image background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px) brightness(0.5);
+  z-index: -1;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  padding: 3rem 1rem;
+  width: 100%;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(30, 58, 138, 0.8);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+nav a {
+  color: #e0ecff; /* Light blue */
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+
+nav a:hover {
+  color: orange;
+}
+
+/* Main content */
+main {
+  width: 100%;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Section titles */
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: orange;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.city-state {
+  display: flex;
+  gap: .75rem;
+}
+
+.city-state input {
+  flex: 1;
+}
+
+input,
+textarea {
+  padding: 0.80rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #111;
+  width: 95%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Buttons */
+button {
+  padding: 0.85rem;
+  font-size: 1rem;
+  background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+button:hover {
+  background: linear-gradient(90deg, #1d4ed8, #60a5fa);
+  transform: scale(1.02);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  width: 100%;
+  padding: 1rem;
+  color: var(--accent-blue);
+  font-size: 0.9rem;
+}
+footer img {
+  height: 1em;
+  vertical-align: middle;
+}
